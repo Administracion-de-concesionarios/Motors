@@ -1,0 +1,12 @@
+RF01: Gestion de empleados
+RF02: Gestion ventas
+RF03: Administracion de catalogos de cada uno de los concesionarios
+RF04: Gestion de compras
+RF05: Administración de las caracteristicas de cada vehiculo
+RF06: Gestion de taller post venta
+RF07: Administración de ofertas
+RF08: Gestion de formas de pago
+RF09: Administracion de los inventarios
+RF10: Administracion de facturas
+RF11: Administración de concesionarios
+RF12: Gestion de recursos humanos

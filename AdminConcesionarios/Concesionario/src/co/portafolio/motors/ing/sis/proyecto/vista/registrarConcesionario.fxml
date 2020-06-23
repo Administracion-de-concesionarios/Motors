@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="911.0" style="-fx-background-color: #262729;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.portafolio.motors.ing.sis.proyecto.controlador.logicaConcesionario">
+   <children>
+      <AnchorPane prefHeight="494.0" prefWidth="245.0" style="-fx-background-color: #18192f;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="134.0" fitWidth="104.0" layoutX="25.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/logos.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label layoutX="132.0" layoutY="247.0" text="Motors" textFill="WHITE">
+               <font>
+                  <Font name="Georgia" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Separator disable="true" layoutX="120.0" layoutY="233.0" opacity="0.11" orientation="VERTICAL" prefHeight="52.0" prefWidth="0.0" />
+         </children>
+      </AnchorPane>
+      <TextField fx:id="txtId" layoutX="623.0" layoutY="124.0" prefHeight="37.0" prefWidth="219.0" promptText="ID" style="-fx-background-color: #36373b; -fx-border-color: #40474e; -fx-border-radius: 4; -fx-text-fill: white;">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtNombre" layoutX="623.0" layoutY="192.0" prefHeight="37.0" prefWidth="219.0" promptText="NOMBRE" style="-fx-background-color: #36373b; -fx-border-color: #40474e; -fx-border-radius: 4; -fx-text-fill: white;" />
+      <TextField fx:id="txtDireccion" layoutX="623.0" layoutY="260.0" prefHeight="37.0" prefWidth="219.0" promptText="DIRECCION" style="-fx-background-color: #36373b; -fx-border-color: #40474e; -fx-border-radius: 4; -fx-text-fill: white;" />
+      <TextField fx:id="txtTelefono" layoutX="623.0" layoutY="325.0" prefHeight="37.0" prefWidth="219.0" promptText="TELEFONO" style="-fx-background-color: #36373b; -fx-border-color: #40474e; -fx-border-radius: 4; -fx-text-fill: white;" />
+      <Button fx:id="btnAgregar" layoutX="623.0" layoutY="399.0" mnemonicParsing="false" onAction="#onbtnAgregarButtonClicked" prefHeight="37.0" prefWidth="123.0" style="-fx-background-color: #ca672e; -fx-background-radius: 4;" text="Aceptar" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="333.0" layoutY="124.0" text="Wellcome" textFill="#8a8181">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Label>
+      <Label layoutX="333.0" layoutY="161.0" prefHeight="31.0" prefWidth="173.0" text="Vas a asociar un" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Black" size="21.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="333.0" layoutY="189.0" prefHeight="37.0" prefWidth="143.0" text="concesionario" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Black" size="21.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="333.0" layoutY="223.0" text="al equipo" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Black" size="21.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Button fx:id="btnAtras" layoutX="329.0" layoutY="41.0" mnemonicParsing="false" onAction="#click" style="-fx-background-color: #37383b; -fx-background-radius: 5;" text="Atras" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Separator layoutX="623.0" layoutY="472.0" prefHeight="6.0" prefWidth="219.0" />
+      <ImageView fx:id="imprimir" fitHeight="24.0" fitWidth="20.0" layoutX="638.0" layoutY="493.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/imprimir.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="descargar" fitHeight="24.0" fitWidth="20.0" layoutX="685.0" layoutY="493.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/descargar.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>
