@@ -1,21 +1,25 @@
 package com.portafolio.motors.ing.sis.proyecto.vista;
 
+import com.portafolio.motors.ing.sis.proyecto.controlador.concesionarioBuilder;
+
 /**
  *
  * @author Yonier Asprilla
  */
 public class Dashboard extends javax.swing.JPanel {
-    
+
     private main main;
-    
-    public Dashboard(main main) {
+    private concesionarioBuilder cb;
+
+    public Dashboard(main main, concesionarioBuilder cb) {
         this.main = main;
+        this.cb = cb;
         initComponents();
         ocultar();
     }
-    
+
     private void ocultar() {
-        
+
         navA.setVisible(false);
         navB.setVisible(false);
         navC.setVisible(false);
@@ -627,15 +631,15 @@ public class Dashboard extends javax.swing.JPanel {
     }//GEN-LAST:event_btnConcesionariosMouseClicked
 
     private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
-        main.irNewconcessionaire(this);
+        main.irNewconcessionaire(this, cb);
     }//GEN-LAST:event_kButton2ActionPerformed
 
     private void btnNuevosConcesionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevosConcesionariosActionPerformed
-        main.irNewconcessionaire(this);
+        main.irNewconcessionaire(this, cb);
     }//GEN-LAST:event_btnNuevosConcesionariosActionPerformed
 
     private void btbBuscarConcesionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbBuscarConcesionariosActionPerformed
-        main.irShowConcessionaire(this);
+        main.irShowConcessionaire(this, cb);
     }//GEN-LAST:event_btbBuscarConcesionariosActionPerformed
 
 

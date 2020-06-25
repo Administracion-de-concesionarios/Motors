@@ -1,6 +1,7 @@
 package com.portafolio.motors.ing.sis.proyecto.vista;
 
 import com.placeholder.PlaceHolder;
+import com.portafolio.motors.ing.sis.proyecto.controlador.concesionarioBuilder;
 import com.portafolio.motors.ing.sis.proyecto.modelo.SQLstatement;
 import javax.swing.JOptionPane;
 
@@ -13,9 +14,11 @@ public class newConcessionaire extends javax.swing.JPanel {
     SQLstatement mensajero = new SQLstatement();
     PlaceHolder holder;
     private main main;
+    private concesionarioBuilder cb;
 
-    public newConcessionaire(main main) {
+    public newConcessionaire(main main, concesionarioBuilder cb) {
         this.main = main;
+        this.cb = cb;
         initComponents();
         placeholder();
     }
@@ -35,7 +38,7 @@ public class newConcessionaire extends javax.swing.JPanel {
         String nombre = txtNombre.getText();
         String direccion = txtDireccion.getText();
         int telefono = Integer.parseInt(txtTelefono.getText());
-        
+
         if (txtId.equals("") || txtNombre.equals("") || txtDireccion.equals("") || txtTelefono.equals("")) {
             JOptionPane.showMessageDialog(null, "¡Por favor llena todos los campos!", "Motors", JOptionPane.WARNING_MESSAGE);
         } else {
@@ -209,7 +212,7 @@ public class newConcessionaire extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-       main.irDashboard(this);
+        main.irDashboard(this, cb);
     }//GEN-LAST:event_btnAtrasActionPerformed
 
 
