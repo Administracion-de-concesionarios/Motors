@@ -45,7 +45,7 @@ public class SQLstatement {
      */
     public boolean nuevosConcesionarios(int id, String nombre, String direccion, int telefono) {
         try {
-            
+
             ps = cn.prepareStatement("call SP_INSERTARCONCESIONARIO (?,?,?,?)");
             //PARAMETROS DE ENTRADA
             ps.setInt(1, id);
@@ -67,7 +67,7 @@ public class SQLstatement {
 
     public Listas<concesionarioBuilder> buscarConcesionarios() {
         try {
-            ps = cn.prepareStatement("call SP_BUSCARCONCESIONARIO");
+            ps = cn.prepareStatement("select * from gc_concesionario");
             rs = ps.executeQuery();
             if (rs != null) {
                 while (rs.next()) {
@@ -79,6 +79,9 @@ public class SQLstatement {
                     lista.addFirst(concesionario);
                 }
             }
+            //System.out.println("datos al llenar la lista");
+            //System.out.println(concesionario.getId());
+            //System.out.println(concesionario.getNombre());
             return lista;
         } catch (SQLException throwables) {
             throwables.printStackTrace();

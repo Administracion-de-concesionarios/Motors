@@ -1,5 +1,6 @@
 package com.portafolio.motors.ing.sis.proyecto.vista;
 
+import com.portafolio.motors.ing.sis.proyecto.controlador.concesionarioBuilder;
 import javax.swing.JPanel;
 
 /**
@@ -11,6 +12,7 @@ public class main extends javax.swing.JFrame {
     private Dashboard dhs;
     private newConcessionaire nc;
     private showConcessionaire sc;
+    private concesionarioBuilder cb;
     //private estadistica es;
 
     public main() {
@@ -25,25 +27,26 @@ public class main extends javax.swing.JFrame {
     }
 
     private void iniciar() {
-        dhs = new Dashboard(this);
+        dhs = new Dashboard(this, cb);
         dhs.setVisible(true);
         add(dhs);
         pack();
         setLocationRelativeTo(null);
     }
 
-    protected void irDashboard(JPanel jPanel) {
+    protected void irDashboard(JPanel jPanel, concesionarioBuilder cb) {
         remove(jPanel);
-        dhs = new Dashboard(this);
+        dhs = new Dashboard(this, cb);
         dhs.setVisible(true);
         add(dhs);
         pack();
         setLocationRelativeTo(null);
+
     }
 
-    public void irNewconcessionaire(JPanel jpanel) {
+    public void irNewconcessionaire(JPanel jpanel, concesionarioBuilder cb) {
         remove(jpanel);
-        nc = new newConcessionaire(this);
+        nc = new newConcessionaire(this, cb);
 
         nc.setVisible(true);
         add(nc);
@@ -51,9 +54,9 @@ public class main extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
 
-    public void irShowConcessionaire(JPanel jpanel) {
+    public void irShowConcessionaire(JPanel jpanel, concesionarioBuilder cb) {
         remove(jpanel);
-        sc = new showConcessionaire(this);
+        sc = new showConcessionaire(this, cb);
         sc.setVisible(true);
         add(sc);
         pack();
