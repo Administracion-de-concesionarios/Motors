@@ -1,25 +1,24 @@
 package com.portafolio.motors.ing.sis.proyecto.modelo;
 
-import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class conexion {
+public class Conexion {
 
     private static Connection conectar;
 //jdbc:mysql://localhost:3306/concesionarios?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
-    private static final String driver = "com.mysql.cj.jdbc.Driver";
-    private static final String usuario = "root";
-    private static final String pwd = "root";
-    private static final String direccionDB = "jdbc:mysql://localhost:3306/concesionarios?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String USUARIO = "root";
+    private static final String PWD = "password";
+    private static final String DIRECCION_DB = "jdbc:mysql://localhost:3306/concesionarios?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
-    conexion() {
+    public Conexion() {
         conectar = null;
         try {
-            Class.forName(driver);
-            conectar = DriverManager.getConnection(direccionDB, usuario, pwd);
+            Class.forName(DRIVER);
+            conectar = DriverManager.getConnection(DIRECCION_DB, USUARIO, PWD);
 
             if (conectar != null) {
                 System.out.println("!D");

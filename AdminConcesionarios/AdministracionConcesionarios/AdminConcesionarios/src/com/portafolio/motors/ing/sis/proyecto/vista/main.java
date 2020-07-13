@@ -16,6 +16,8 @@ public class main extends javax.swing.JFrame {
     private modifyConcessionaire mc;
     private addFeatures af;
     private newEmployee ne;
+    private newClient ncl;
+    private modifyClient mcl;
     //private estadistica es;
 
     public main() {
@@ -92,6 +94,24 @@ public class main extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }
+    
+    public void irAddClient(JPanel jpanel) {
+        remove(jpanel);
+        ncl = new newClient(this);
+        ncl.setVisible(true);
+        add(ncl);
+        pack();
+        setLocationRelativeTo(null);
+    }
+    
+    public void irModifyClient(JPanel jpanel) {
+        remove(jpanel);
+        mcl = new modifyClient(this);
+        mcl.setVisible(true);
+        add(mcl);
+        pack();
+        setLocationRelativeTo(null);
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -149,6 +169,10 @@ public class main extends javax.swing.JFrame {
             }
         });
     }
+
+    
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables

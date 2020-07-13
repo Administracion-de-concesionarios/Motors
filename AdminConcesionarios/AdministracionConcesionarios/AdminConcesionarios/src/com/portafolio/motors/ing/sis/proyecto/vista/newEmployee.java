@@ -2,8 +2,6 @@ package com.portafolio.motors.ing.sis.proyecto.vista;
 
 import com.portafolio.motors.ing.sis.proyecto.controlador.concesionarioBuilder;
 import com.portafolio.motors.ing.sis.proyecto.modelo.SQLstatement;
-import com.toedter.calendar.JDateChooser;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -42,7 +40,7 @@ public class newEmployee extends javax.swing.JPanel {
 
             java.sql.Date salida = null;
             if (undefined.isSelected()) {
-                dateOut.enable(false);
+                dateOut.setEnabled(false);
                 dateOut.setDate(null);
             } else {
                 //TOMO FECHA SELECCIONADA FINAL
@@ -52,8 +50,9 @@ public class newEmployee extends javax.swing.JPanel {
             }
             String puesto = (String) cargo.getSelectedItem();
 
-            if (txtId.equals("") && txtNombre.equals("") && txtApellidos.equals("") && txtDireccion.equals("") && txtTelefono.equals("")
-                    && txtDNI.equals("") && txtJefe.equals("") && dateIn.equals("")) {
+            if (txtId.getText().equals("") && txtNombre.getText().equals("")&& txtApellidos.getText().equals("") 
+                    && txtDireccion.getText().equals("") && txtTelefono.getText().equals("")
+                    && txtDNI.getText().equals("") && txtJefe.getText().equals("") && dateIn.equals("")) {
                 JOptionPane.showMessageDialog(null, "¡Debes llenar todos los campos!", "Motors", JOptionPane.INFORMATION_MESSAGE);
             } else {
 
@@ -79,6 +78,10 @@ public class newEmployee extends javax.swing.JPanel {
             }
         } catch (NullPointerException throwables) {
             System.out.println("LA VISTA DIJO: " + throwables.getMessage() + " SEGUIDO DE: " + throwables.getCause());
+            throwables.printStackTrace();
+        } catch (NumberFormatException e) {
+            System.out.println("Campos incompletos");
+            JOptionPane.showMessageDialog(null, "Debe llenar todos los campos.", "ERROR", 0);
         }
     }
 

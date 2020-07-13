@@ -166,7 +166,7 @@
             </Property>
             <Property name="colorTransparente" type="boolean" value="true"/>
             <Property name="materialDesing" type="boolean" value="true"/>
-            <Property name="placeholder" type="java.lang.String" value="Buscar Por Nombre"/>
+            <Property name="placeholder" type="java.lang.String" value="Buscar Por ID"/>
             <Property name="selectionColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>

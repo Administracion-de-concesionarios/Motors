@@ -106,7 +106,7 @@
             </Property>
             <Property name="colorTransparente" type="boolean" value="true"/>
             <Property name="materialDesing" type="boolean" value="true"/>
-            <Property name="placeholder" type="java.lang.String" value="Filtrar por nombre"/>
+            <Property name="placeholder" type="java.lang.String" value="Filtrar por id"/>
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtSearchKeyTyped"/>

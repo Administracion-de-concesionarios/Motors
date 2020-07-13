@@ -28,29 +28,30 @@ public class newConcessionaire extends javax.swing.JPanel {
 
         //TextPrompt nombre = new TextPrompt(" Nombres & Apellidos", txtId);
         //holder = new PlaceHolder(txtId, " ID");
-        holder = new PlaceHolder(txtNombre, " Nombre");
-        holder = new PlaceHolder(txtDireccion, " Direccion");
-        holder = new PlaceHolder(txtTelefono, " Telefono");
+//        holder = new PlaceHolder(txtNombre, " Nombre");
+//        holder = new PlaceHolder(txtDireccion, " Direccion");
+//        holder = new PlaceHolder(txtTelefono, " Telefono");
     }
 
     private void registrar() {
-
-        int id = Integer.parseInt(txtId.getText());
+        
+        String id = txtId.getText();
         String nombre = txtNombre.getText();
         String direccion = txtDireccion.getText();
-        int telefono = Integer.parseInt(txtTelefono.getText());
+        String telefono = txtTelefono.getText();
 
-        if (txtId.equals("") || txtNombre.equals("") || txtDireccion.equals("") || txtTelefono.equals("")) {
+        if (id.equals("") || nombre.equals("") || direccion.equals("") || telefono.equals("")) {
             JOptionPane.showMessageDialog(null, "¡Por favor llena todos los campos!", "Motors", JOptionPane.WARNING_MESSAGE);
         } else {
-            boolean agregar = mensajero.nuevosConcesionarios(id, nombre, direccion, telefono);
-            if (agregar != false) {
+            boolean agregar = mensajero.nuevosConcesionarios(Integer.parseInt(id), nombre, direccion, Integer.parseInt(telefono));
+            if (agregar == true) {
                 JOptionPane.showMessageDialog(null, "¡El concesionario se ha agregado al equipo!", "Motors", JOptionPane.INFORMATION_MESSAGE);
                 limpiar();
             } else {
                 JOptionPane.showMessageDialog(null, "¡No hemos podido agregar el concesionario!", "Motors", JOptionPane.INFORMATION_MESSAGE);
             }
         }
+        
     }
 
     private void limpiar() {
@@ -95,6 +96,7 @@ public class newConcessionaire extends javax.swing.JPanel {
         jLabel17 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 204));
+        setToolTipText("");
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(14, 14, 14));
@@ -107,6 +109,7 @@ public class newConcessionaire extends javax.swing.JPanel {
 
         jLabel10.setFont(new java.awt.Font("Perpetua Titling MT", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("CONCESIONARIOS");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
@@ -149,7 +152,7 @@ public class newConcessionaire extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel1.setText("Wellcome");
+        jLabel1.setText("Welcome");
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 111, -1, -1));
 

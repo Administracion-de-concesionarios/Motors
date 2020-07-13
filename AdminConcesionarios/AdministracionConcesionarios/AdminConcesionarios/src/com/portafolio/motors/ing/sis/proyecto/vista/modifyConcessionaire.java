@@ -4,7 +4,6 @@ import com.portafolio.motors.ing.sis.proyecto.controlador.Listas;
 import com.portafolio.motors.ing.sis.proyecto.controlador.concesionarioBuilder;
 import com.portafolio.motors.ing.sis.proyecto.modelo.SQLstatement;
 import java.awt.Color;
-import static javafx.scene.paint.Color.color;
 import javax.swing.JOptionPane;
 
 /**
@@ -66,10 +65,10 @@ public class modifyConcessionaire extends javax.swing.JPanel {
             int confirm = JOptionPane.showConfirmDialog(null, "¿Estas seguro de modificar tus datos?", "Motors", JOptionPane.INFORMATION_MESSAGE);
             if (confirm == 0) {
                 boolean modificar = mensajero.modificarConcesionarios(id, nombre, direccion, telefono);
-                System.out.println("LA VISTA TIENE ID "+ id);
-                System.out.println("LA VISTA TIENE NOMBRE "+ nombre);
-                System.out.println("LA VISTA TIENE DIRECCION "+ direccion);
-                System.out.println("LA VISTA TIENE TELEFONO "+ telefono);
+                System.out.println("LA VISTA TIENE ID " + id);
+                System.out.println("LA VISTA TIENE NOMBRE " + nombre);
+                System.out.println("LA VISTA TIENE DIRECCION " + direccion);
+                System.out.println("LA VISTA TIENE TELEFONO " + telefono);
                 if (modificar != false) {
                     JOptionPane.showMessageDialog(null, "¡Datos modificados con exito!", "Motors", JOptionPane.INFORMATION_MESSAGE);
                 }
@@ -83,7 +82,7 @@ public class modifyConcessionaire extends javax.swing.JPanel {
 
     private void roadTripStepOne() {
 
-        if (!txtId.equals("") || txtNombre.equals("") || txtDireccion.equals("") || txtTelefono.equals("")) {
+        if (!txtId.getText().equals("") || txtNombre.getText().equals("") || txtDireccion.getText().equals("") || txtTelefono.getText().equals("")) {
             step1.setBackground(new Color(0, 19, 56));
             line.setForeground(new Color(0, 19, 56));
             line.setBackground(new Color(0, 19, 56));
@@ -92,7 +91,7 @@ public class modifyConcessionaire extends javax.swing.JPanel {
     }
 
     private void roadTripStepTwo() {
-        if (!txtId.equals("") || txtNombre.equals("") || txtDireccion.equals("") || txtTelefono.equals("")) {
+        if (!txtId.getText().equals("") || txtNombre.getText().equals("") || txtDireccion.getText().equals("") || txtTelefono.getText().equals("")) {
             step2.setBackground(new Color(0, 19, 56));
 //        line.setForeground(new Color(0, 19, 56));
 //        line.setBackground(new Color(0, 19, 56));
@@ -171,7 +170,7 @@ public class modifyConcessionaire extends javax.swing.JPanel {
         txtSearch.setBordeColorNoFocus(new java.awt.Color(51, 51, 51));
         txtSearch.setColorTransparente(true);
         txtSearch.setMaterialDesing(true);
-        txtSearch.setPlaceholder("Buscar Por Nombre");
+        txtSearch.setPlaceholder("Buscar Por ID");
         txtSearch.setSelectionColor(new java.awt.Color(0, 0, 0));
 
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/icon/search.png"))); // NOI18N

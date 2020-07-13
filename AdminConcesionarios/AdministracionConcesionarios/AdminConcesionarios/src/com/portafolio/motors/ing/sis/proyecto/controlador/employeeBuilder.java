@@ -8,17 +8,17 @@ import java.sql.Date;
  */
 public class employeeBuilder {
 
-    String id;
-    String nombre;
-    String apellidos;
-    Object direccion;
-    String telefono;
-    String dni;
-    Object sueldo;
-    String jefe;
-    Date fechaAlta;
-    Date fechaBaja;
-    String tipoEmpleado;
+    private String id;
+    private String nombre;
+    private String apellidos;
+    private Object direccion;
+    private String telefono;
+    private String dni;
+    private Object sueldo;
+    private String jefe;
+    private Date fechaAlta;
+    private Date fechaBaja;
+    private String tipoEmpleado;
 
     public employeeBuilder(String id, String nombre, String apellidos, Object direccion, String telefono, String dni, Object sueldo, String jefe, Date fechaAlta, Date fechaBaja, String tipoEmpleado) {
         this.id = id;
@@ -123,6 +123,7 @@ public class employeeBuilder {
     }
 
     public employeeBuilder() {
+
     }
 
     @Override

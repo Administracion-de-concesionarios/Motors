@@ -9,23 +9,44 @@ import javax.swing.JPanel;
  * @author Yonier Asprilla
  */
 public class Dashboard extends javax.swing.JPanel {
-    
+
     private main main;
     private concesionarioBuilder cb;
-    
+
     public Dashboard(main main, concesionarioBuilder cb) {
         this.main = main;
         this.cb = cb;
         initComponents();
-        
+
     }
-    
-    void setColor(JPanel panel) { //227,225,231
+
+    public void setColor(JPanel panel) { //227,225,231
         panel.setBackground(new Color(227, 225, 231));
     }
-    
-    void resetColor(JPanel panel) {//[247,245,249]
+
+    public void resetColor(JPanel panel) {//[247,245,249]
         panel.setBackground(new Color(247, 245, 249));
+    }
+
+    public void reset() {
+        // PANELES
+        pnlEmpleados.setVisible(false);
+        pnlConcesionarios.setVisible(false);
+        pnlOfertas.setVisible(false);
+        pnlHome.setVisible(false);
+        pnlFeatures.setVisible(false);
+        pnlTaller.setVisible(false);
+        pnlClientes.setVisible(false);
+        // HOVERS
+        resetColor(hoverHome);
+        resetColor(hoverEMP);
+        resetColor(hoverTaller);
+        resetColor(hoverInventario);
+        resetColor(hoverOfertas);
+        resetColor(hoverClientes);
+        resetColor(hoverPagos);
+        resetColor(hoverCaracteristicas);
+        resetColor(hoverSedes);
     }
 
     /**
@@ -104,6 +125,34 @@ public class Dashboard extends javax.swing.JPanel {
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         btnNuevosConcesionarios2 = new keeptoo.KButton();
+        pnlClientes = new javax.swing.JPanel();
+        jLabel41 = new javax.swing.JLabel();
+        jPanelRound12 = new LIB.JPanelRound();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        kButton7 = new keeptoo.KButton();
+        jPanelRound13 = new LIB.JPanelRound();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        btnNewClient = new keeptoo.KButton();
+        jPanelRound14 = new LIB.JPanelRound();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        btnModifyClientData = new keeptoo.KButton();
+        jPanelRound15 = new LIB.JPanelRound();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        btnDeleteClient = new keeptoo.KButton();
+        jPanelRound16 = new LIB.JPanelRound();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        btnFindClient = new keeptoo.KButton();
+        jLabel57 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -138,6 +187,16 @@ public class Dashboard extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1280, 605));
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                formMouseDragged(evt);
+            }
+        });
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                formMousePressed(evt);
+            }
+        });
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         contenedor.setBackground(new java.awt.Color(255, 255, 255));
@@ -187,7 +246,7 @@ public class Dashboard extends javax.swing.JPanel {
         jPanelRound6.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 190, -1));
 
         jLabel23.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel23.setText("la beinvenida");
+        jLabel23.setText("la bienvenida");
         jPanelRound6.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         jLabel24.setForeground(new java.awt.Color(204, 204, 204));
@@ -403,7 +462,7 @@ public class Dashboard extends javax.swing.JPanel {
         jPanelRound1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 190, -1));
 
         jLabel21.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel21.setText("la beinvenida");
+        jLabel21.setText("la bienvenida");
         jPanelRound1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         jLabel22.setForeground(new java.awt.Color(204, 204, 204));
@@ -648,6 +707,223 @@ public class Dashboard extends javax.swing.JPanel {
 
         contenedor.add(pnlFeatures, "card7");
 
+        pnlClientes.setBackground(new java.awt.Color(255, 255, 255));
+        pnlClientes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/icon/prb2.png"))); // NOI18N
+        pnlClientes.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 0, 60, 60));
+
+        jPanelRound12.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelRound12.setColorPrimario(new java.awt.Color(96, 150, 150));
+        jPanelRound12.setColorSecundario(new java.awt.Color(96, 150, 150));
+        jPanelRound12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/img/btnwl.jpeg"))); // NOI18N
+        jPanelRound12.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 190, -1));
+
+        jLabel43.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel43.setText("la bienvenida");
+        jPanelRound12.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+
+        jLabel44.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel44.setText("Te damos");
+        jPanelRound12.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        kButton7.setBorderPainted(false);
+        kButton7.setkBackGroundColor(new java.awt.Color(96, 150, 150));
+        kButton7.setkEndColor(new java.awt.Color(96, 150, 150));
+        kButton7.setkForeGround(new java.awt.Color(96, 150, 150));
+        kButton7.setkHoverColor(new java.awt.Color(96, 150, 150));
+        kButton7.setkHoverEndColor(new java.awt.Color(96, 150, 150));
+        kButton7.setkHoverForeGround(new java.awt.Color(96, 150, 150));
+        kButton7.setkHoverStartColor(new java.awt.Color(96, 150, 150));
+        kButton7.setkIndicatorColor(new java.awt.Color(96, 150, 150));
+        kButton7.setkPressedColor(new java.awt.Color(96, 150, 150));
+        kButton7.setkSelectedColor(new java.awt.Color(96, 150, 150));
+        kButton7.setkStartColor(new java.awt.Color(96, 150, 150));
+        jPanelRound12.add(kButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 80));
+
+        pnlClientes.add(jPanelRound12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 300, 80));
+
+        jPanelRound13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel45.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel45.setText("Cliente");
+        jPanelRound13.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 120, -1));
+
+        jLabel46.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel46.setText("Agregar");
+        jPanelRound13.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 100, -1));
+
+        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/icon/bookWhite.png"))); // NOI18N
+        jLabel47.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanelRound13.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        btnNewClient.setBackground(new java.awt.Color(255, 255, 255));
+        btnNewClient.setForeground(new java.awt.Color(0, 0, 0));
+        btnNewClient.setActionCommand("Asociar empleado");
+        btnNewClient.setBorderPainted(false);
+        btnNewClient.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        btnNewClient.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        btnNewClient.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        btnNewClient.setIconTextGap(35);
+        btnNewClient.setkBackGroundColor(new java.awt.Color(242, 167, 81));
+        btnNewClient.setkEndColor(new java.awt.Color(242, 167, 81));
+        btnNewClient.setkForeGround(new java.awt.Color(0, 0, 0));
+        btnNewClient.setkHoverColor(new java.awt.Color(0, 193, 56));
+        btnNewClient.setkHoverEndColor(new java.awt.Color(0, 193, 56));
+        btnNewClient.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        btnNewClient.setkHoverStartColor(new java.awt.Color(0, 193, 56));
+        btnNewClient.setkIndicatorColor(new java.awt.Color(51, 51, 51));
+        btnNewClient.setkStartColor(new java.awt.Color(242, 167, 81));
+        btnNewClient.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnNewClient.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btnNewClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewClientActionPerformed(evt);
+            }
+        });
+        jPanelRound13.add(btnNewClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 130));
+
+        pnlClientes.add(jPanelRound13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 130, 130));
+
+        jPanelRound14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel48.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel48.setText("Modificar");
+        jPanelRound14.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 110, -1));
+
+        jLabel49.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel49.setText("Cliente");
+        jPanelRound14.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 120, -1));
+
+        jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/icon/modify.png"))); // NOI18N
+        jLabel50.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanelRound14.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        btnModifyClientData.setBackground(new java.awt.Color(255, 255, 255));
+        btnModifyClientData.setForeground(new java.awt.Color(0, 0, 0));
+        btnModifyClientData.setActionCommand("Asociar empleado");
+        btnModifyClientData.setBorderPainted(false);
+        btnModifyClientData.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        btnModifyClientData.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        btnModifyClientData.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnModifyClientData.setIconTextGap(8);
+        btnModifyClientData.setkBackGroundColor(new java.awt.Color(238, 172, 157));
+        btnModifyClientData.setkEndColor(new java.awt.Color(238, 172, 157));
+        btnModifyClientData.setkForeGround(new java.awt.Color(0, 0, 0));
+        btnModifyClientData.setkHoverColor(new java.awt.Color(0, 193, 56));
+        btnModifyClientData.setkHoverEndColor(new java.awt.Color(0, 193, 56));
+        btnModifyClientData.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        btnModifyClientData.setkHoverStartColor(new java.awt.Color(0, 193, 56));
+        btnModifyClientData.setkIndicatorColor(new java.awt.Color(51, 51, 51));
+        btnModifyClientData.setkStartColor(new java.awt.Color(238, 172, 157));
+        btnModifyClientData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifyClientDataActionPerformed(evt);
+            }
+        });
+        jPanelRound14.add(btnModifyClientData, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 130));
+
+        pnlClientes.add(jPanelRound14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, 130, 130));
+
+        jPanelRound15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel51.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel51.setText("Cliente");
+        jPanelRound15.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+
+        jLabel52.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel52.setText("Eliminar");
+        jPanelRound15.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+
+        jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/icon/whiTrash.png"))); // NOI18N
+        jLabel53.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanelRound15.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, -1));
+
+        btnDeleteClient.setBackground(new java.awt.Color(255, 255, 255));
+        btnDeleteClient.setForeground(new java.awt.Color(0, 0, 0));
+        btnDeleteClient.setToolTipText("");
+        btnDeleteClient.setActionCommand("Asociar empleado");
+        btnDeleteClient.setBorderPainted(false);
+        btnDeleteClient.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        btnDeleteClient.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        btnDeleteClient.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnDeleteClient.setIconTextGap(7);
+        btnDeleteClient.setkBackGroundColor(new java.awt.Color(45, 46, 70));
+        btnDeleteClient.setkEndColor(new java.awt.Color(45, 46, 70));
+        btnDeleteClient.setkForeGround(new java.awt.Color(0, 0, 0));
+        btnDeleteClient.setkHoverColor(new java.awt.Color(0, 193, 56));
+        btnDeleteClient.setkHoverEndColor(new java.awt.Color(0, 193, 56));
+        btnDeleteClient.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        btnDeleteClient.setkHoverStartColor(new java.awt.Color(0, 193, 56));
+        btnDeleteClient.setkIndicatorColor(new java.awt.Color(51, 51, 51));
+        btnDeleteClient.setkStartColor(new java.awt.Color(45, 46, 70));
+        btnDeleteClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteClientActionPerformed(evt);
+            }
+        });
+        jPanelRound15.add(btnDeleteClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 130));
+
+        pnlClientes.add(jPanelRound15, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 130, 130));
+
+        jPanelRound16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel54.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel54.setText("Cliente");
+        jPanelRound16.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+
+        jLabel55.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel55.setText("Buscar");
+        jPanelRound16.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+
+        jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/icon/searching.png"))); // NOI18N
+        jLabel56.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanelRound16.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        btnFindClient.setBackground(new java.awt.Color(255, 255, 255));
+        btnFindClient.setForeground(new java.awt.Color(0, 0, 0));
+        btnFindClient.setActionCommand("Asociar empleado");
+        btnFindClient.setBorderPainted(false);
+        btnFindClient.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        btnFindClient.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        btnFindClient.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnFindClient.setIconTextGap(8);
+        btnFindClient.setkBackGroundColor(new java.awt.Color(242, 167, 81));
+        btnFindClient.setkEndColor(new java.awt.Color(242, 167, 81));
+        btnFindClient.setkForeGround(new java.awt.Color(0, 0, 0));
+        btnFindClient.setkHoverColor(new java.awt.Color(0, 193, 56));
+        btnFindClient.setkHoverEndColor(new java.awt.Color(0, 193, 56));
+        btnFindClient.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        btnFindClient.setkHoverStartColor(new java.awt.Color(0, 193, 56));
+        btnFindClient.setkIndicatorColor(new java.awt.Color(51, 51, 51));
+        btnFindClient.setkStartColor(new java.awt.Color(242, 167, 81));
+        btnFindClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFindClientActionPerformed(evt);
+            }
+        });
+        jPanelRound16.add(btnFindClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 130));
+
+        pnlClientes.add(jPanelRound16, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 30, 130, 130));
+
+        jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/icon/prb1.png"))); // NOI18N
+        pnlClientes.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 540, 70, 70));
+
+        contenedor.add(pnlClientes, "card2");
+
         add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 1170, 610));
 
         jPanel1.setBackground(new java.awt.Color(247, 245, 249));
@@ -732,11 +1008,6 @@ public class Dashboard extends javax.swing.JPanel {
         btnEmpleados.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnEmpleados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/icon/usersGray2.png"))); // NOI18N
         btnEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnEmpleadosMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout hoverEMPLayout = new javax.swing.GroupLayout(hoverEMP);
         hoverEMP.setLayout(hoverEMPLayout);
@@ -975,11 +1246,6 @@ public class Dashboard extends javax.swing.JPanel {
         btnConcesionarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnConcesionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/icon/shopGray2.png"))); // NOI18N
         btnConcesionarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnConcesionarios.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnConcesionariosMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout hoverSedesLayout = new javax.swing.GroupLayout(hoverSedes);
         hoverSedes.setLayout(hoverSedesLayout);
@@ -1010,24 +1276,6 @@ public class Dashboard extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jLabel11MouseClicked
 
-    private void btnEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmpleadosMouseClicked
-        pnlEmpleados.setVisible(true);
-        pnlConcesionarios.setVisible(false);
-        pnlOfertas.setVisible(false);
-        pnlHome.setVisible(false);
-        pnlFeatures.setVisible(false);
-
-    }//GEN-LAST:event_btnEmpleadosMouseClicked
-
-    private void btnConcesionariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConcesionariosMouseClicked
-        pnlEmpleados.setVisible(false);
-        pnlConcesionarios.setVisible(true);
-        pnlOfertas.setVisible(false);
-        pnlHome.setVisible(false);
-        pnlFeatures.setVisible(false);
-
-    }//GEN-LAST:event_btnConcesionariosMouseClicked
-
     private void btnNuevosConcesionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevosConcesionariosActionPerformed
         main.irNewconcessionaire(this, cb);
     }//GEN-LAST:event_btnNuevosConcesionariosActionPerformed
@@ -1037,151 +1285,140 @@ public class Dashboard extends javax.swing.JPanel {
     }//GEN-LAST:event_btbBuscarConcesionariosActionPerformed
 
     private void btnHomesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomesMouseClicked
+        reset();
         setColor(hoverHome);
-        resetColor(hoverEMP);
-        resetColor(hoverTaller);
-        resetColor(hoverInventario);
-        resetColor(hoverOfertas);
-        resetColor(hoverClientes);
-        resetColor(hoverPagos);
-        resetColor(hoverCaracteristicas);
-        resetColor(hoverSedes);
+//        resetColor(hoverEMP);
+//        resetColor(hoverTaller);
+//        resetColor(hoverInventario);
+//        resetColor(hoverOfertas);
+//        resetColor(hoverClientes);
+//        resetColor(hoverPagos);
+//        resetColor(hoverCaracteristicas);
+//        resetColor(hoverSedes);
     }//GEN-LAST:event_btnHomesMouseClicked
 
-    private void btnEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmpleadoMouseClicked
-        resetColor(hoverHome);
-        setColor(hoverEMP);
-        resetColor(hoverTaller);
-        resetColor(hoverInventario);
-        resetColor(hoverOfertas);
-        resetColor(hoverClientes);
-        resetColor(hoverPagos);
-        resetColor(hoverCaracteristicas);
-        resetColor(hoverSedes);
-        //Show panel
-        pnlEmpleados.setVisible(true);
-        pnlHome.setVisible(false);
-        pnlFeatures.setVisible(false);
-        pnlConcesionarios.setVisible(false);
-        pnlOfertas.setVisible(false);
-    }//GEN-LAST:event_btnEmpleadoMouseClicked
-
     private void btnTallerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTallerMouseClicked
-        resetColor(hoverHome);
-        resetColor(hoverEMP);
+        reset();
         setColor(hoverTaller);
-        resetColor(hoverInventario);
-        resetColor(hoverOfertas);
-        resetColor(hoverClientes);
-        resetColor(hoverPagos);
-        resetColor(hoverCaracteristicas);
-        resetColor(hoverSedes);
+//        resetColor(hoverHome);
+//        resetColor(hoverEMP);
+//        resetColor(hoverInventario);
+//        resetColor(hoverOfertas);
+//        resetColor(hoverClientes);
+//        resetColor(hoverPagos);
+//        resetColor(hoverCaracteristicas);
+//        resetColor(hoverSedes);
         //show panel
-        pnlEmpleados.setVisible(false);
+//        pnlEmpleados.setVisible(false);
         pnlTaller.setVisible(true);
-        pnlHome.setVisible(false);
-        pnlFeatures.setVisible(false);
-        pnlConcesionarios.setVisible(false);
-        pnlOfertas.setVisible(false);
+//        pnlHome.setVisible(false);
+//        pnlFeatures.setVisible(false);
+//        pnlConcesionarios.setVisible(false);
+//        pnlOfertas.setVisible(false);
 
     }//GEN-LAST:event_btnTallerMouseClicked
 
     private void btnInventariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventariosMouseClicked
-        resetColor(hoverHome);
-        resetColor(hoverEMP);
-        resetColor(hoverTaller);
+        reset();
+//        resetColor(hoverHome);
+//        resetColor(hoverEMP);
+//        resetColor(hoverTaller);
         setColor(hoverInventario);
-        resetColor(hoverOfertas);
-        resetColor(hoverClientes);
-        resetColor(hoverPagos);
-        resetColor(hoverCaracteristicas);
-        resetColor(hoverSedes);
+//        resetColor(hoverOfertas);
+//        resetColor(hoverClientes);
+//        resetColor(hoverPagos);
+//        resetColor(hoverCaracteristicas);
+//        resetColor(hoverSedes);
         //show panel
 
 
     }//GEN-LAST:event_btnInventariosMouseClicked
 
     private void btnOffersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOffersMouseClicked
-        resetColor(hoverHome);
-        resetColor(hoverEMP);
-        resetColor(hoverTaller);
-        resetColor(hoverInventario);
+        reset();
+//        resetColor(hoverHome);
+//        resetColor(hoverEMP);
+//        resetColor(hoverTaller);
+//        resetColor(hoverInventario);
         setColor(hoverOfertas);
-        resetColor(hoverClientes);
-        resetColor(hoverPagos);
-        resetColor(hoverCaracteristicas);
-        resetColor(hoverSedes);
-        //show panel
-        pnlEmpleados.setVisible(false);
+//        resetColor(hoverClientes);
+//        resetColor(hoverPagos);
+//        resetColor(hoverCaracteristicas);
+//        resetColor(hoverSedes);
+//        //show panel
+//        pnlEmpleados.setVisible(false);
         pnlOfertas.setVisible(true);
-        pnlHome.setVisible(false);
-        pnlFeatures.setVisible(false);
-        pnlTaller.setVisible(false);
-        pnlConcesionarios.setVisible(false);
+//        pnlHome.setVisible(false);
+//        pnlFeatures.setVisible(false);
+//        pnlTaller.setVisible(false);
+//        pnlConcesionarios.setVisible(false);
     }//GEN-LAST:event_btnOffersMouseClicked
 
     private void btnClientsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientsMouseClicked
-        resetColor(hoverHome);
-        resetColor(hoverEMP);
-        resetColor(hoverTaller);
-        resetColor(hoverInventario);
-        resetColor(hoverOfertas);
+        reset();
+//        resetColor(hoverHome);
+//        resetColor(hoverEMP);
+//        resetColor(hoverTaller);
+//        resetColor(hoverInventario);
+//        resetColor(hoverOfertas);
         setColor(hoverClientes);
-        resetColor(hoverPagos);
-        resetColor(hoverCaracteristicas);
-        resetColor(hoverSedes);
+//        resetColor(hoverPagos);
+//        resetColor(hoverCaracteristicas);
+//        resetColor(hoverSedes);
+        pnlClientes.setVisible(true);
     }//GEN-LAST:event_btnClientsMouseClicked
 
     private void btnFpayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFpayMouseClicked
-        resetColor(hoverHome);
-        resetColor(hoverEMP);
-        resetColor(hoverTaller);
-        resetColor(hoverInventario);
-        resetColor(hoverOfertas);
-        resetColor(hoverClientes);
+        reset();
+//        resetColor(hoverHome);
+//        resetColor(hoverEMP);
+//        resetColor(hoverTaller);
+//        resetColor(hoverInventario);
+//        resetColor(hoverOfertas);
+//        resetColor(hoverClientes);
         setColor(hoverPagos);
-        resetColor(hoverCaracteristicas);
-        resetColor(hoverSedes);
+//        resetColor(hoverCaracteristicas);
+//        resetColor(hoverSedes);
     }//GEN-LAST:event_btnFpayMouseClicked
 
     private void btnCaractMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCaractMouseClicked
-        resetColor(hoverHome);
-        resetColor(hoverEMP);
-        resetColor(hoverTaller);
-        resetColor(hoverInventario);
-        resetColor(hoverOfertas);
-        resetColor(hoverClientes);
-        resetColor(hoverPagos);
+        reset();
+//        resetColor(hoverHome);
+//        resetColor(hoverEMP);
+//        resetColor(hoverTaller);
+//        resetColor(hoverInventario);
+//        resetColor(hoverOfertas);
+//        resetColor(hoverClientes);
+//        resetColor(hoverPagos);
         setColor(hoverCaracteristicas);
-        resetColor(hoverSedes);
-        
+//        resetColor(hoverSedes);
+//
         pnlFeatures.setVisible(true);
-        pnlHome.setVisible(false);
-        pnlEmpleados.setVisible(false);
-        pnlOfertas.setVisible(false);
-        pnlTaller.setVisible(false);
-        pnlConcesionarios.setVisible(false);
-
+//        pnlHome.setVisible(false);
+//        pnlEmpleados.setVisible(false);
+//        pnlOfertas.setVisible(false);
+//        pnlTaller.setVisible(false);
+//        pnlConcesionarios.setVisible(false);
     }//GEN-LAST:event_btnCaractMouseClicked
 
     private void btnSedeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSedeMouseClicked
-        resetColor(hoverHome);
-        resetColor(hoverEMP);
-        resetColor(hoverTaller);
-        resetColor(hoverInventario);
-        resetColor(hoverOfertas);
-        resetColor(hoverClientes);
-        resetColor(hoverPagos);
-        resetColor(hoverCaracteristicas);
+        reset();
+//        resetColor(hoverHome);
+//        resetColor(hoverEMP);
+//        resetColor(hoverTaller);
+//        resetColor(hoverInventario);
+//        resetColor(hoverOfertas);
+//        resetColor(hoverClientes);
+//        resetColor(hoverPagos);
+//        resetColor(hoverCaracteristicas);
         setColor(hoverSedes);
-        //show panel
+//        //show panel
         pnlConcesionarios.setVisible(true);
-        pnlHome.setVisible(false);
-        pnlFeatures.setVisible(false);
-        pnlEmpleados.setVisible(false);
-        pnlOfertas.setVisible(false);
-        pnlTaller.setVisible(false);
-
+//        pnlHome.setVisible(false);
+//        pnlFeatures.setVisible(false);
+//        pnlEmpleados.setVisible(false);
+//        pnlOfertas.setVisible(false);
+//        pnlTaller.setVisible(false);
     }//GEN-LAST:event_btnSedeMouseClicked
 
     private void btnModificarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarDatosActionPerformed
@@ -1204,6 +1441,51 @@ public class Dashboard extends javax.swing.JPanel {
         main.irAddFeatures(this);
     }//GEN-LAST:event_btnNuevosConcesionarios2ActionPerformed
 
+    private void btnNewClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewClientActionPerformed
+        main.irAddClient(this);
+    }//GEN-LAST:event_btnNewClientActionPerformed
+
+    private void btnModifyClientDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyClientDataActionPerformed
+        main.irModifyClient(this);
+    }//GEN-LAST:event_btnModifyClientDataActionPerformed
+
+    private void btnFindClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindClientActionPerformed
+        //main.irFindClients(this);
+    }//GEN-LAST:event_btnFindClientActionPerformed
+
+    private void btnDeleteClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteClientActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteClientActionPerformed
+
+    private void btnEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmpleadoMouseClicked
+        reset();
+//        resetColor(hoverHome);
+        setColor(hoverEMP);
+//        resetColor(hoverTaller);
+//        resetColor(hoverInventario);
+//        resetColor(hoverOfertas);
+//        resetColor(hoverClientes);
+//        resetColor(hoverPagos);
+//        resetColor(hoverCaracteristicas);
+//        resetColor(hoverSedes);
+//        //Show panel
+        pnlEmpleados.setVisible(true);
+//        pnlHome.setVisible(false);
+//        pnlFeatures.setVisible(false);
+//        pnlConcesionarios.setVisible(false);
+//        pnlOfertas.setVisible(false);
+    }//GEN-LAST:event_btnEmpleadoMouseClicked
+
+    private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
+        new keeptoo.Drag(jPanel1).moveWindow(evt);
+        new keeptoo.Drag(contenedor).moveWindow(evt);
+    }//GEN-LAST:event_formMouseDragged
+
+    private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
+        new keeptoo.Drag(jPanel1).onPress(evt);
+        new keeptoo.Drag(contenedor).onPress(evt);
+    }//GEN-LAST:event_formMousePressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private keeptoo.KButton btbBuscarConcesionarios;
@@ -1213,10 +1495,12 @@ public class Dashboard extends javax.swing.JPanel {
     private javax.swing.JLabel btnClientes;
     private javax.swing.JLabel btnClients;
     private javax.swing.JLabel btnConcesionarios;
+    private keeptoo.KButton btnDeleteClient;
     private keeptoo.KButton btnDesvincular;
     private keeptoo.KButton btnDesvincular1;
     private javax.swing.JLabel btnEmpleado;
     private javax.swing.JLabel btnEmpleados;
+    private keeptoo.KButton btnFindClient;
     private javax.swing.JLabel btnFpay;
     private javax.swing.JLabel btnHome;
     private javax.swing.JLabel btnHomes;
@@ -1226,6 +1510,8 @@ public class Dashboard extends javax.swing.JPanel {
     private javax.swing.JLabel btnMediosPay;
     private keeptoo.KButton btnModificarDatos;
     private keeptoo.KButton btnModificarDatos1;
+    private keeptoo.KButton btnModifyClientData;
+    private keeptoo.KButton btnNewClient;
     private keeptoo.KButton btnNuevosConcesionarios;
     private keeptoo.KButton btnNuevosConcesionarios1;
     private keeptoo.KButton btnNuevosConcesionarios2;
@@ -1279,7 +1565,24 @@ public class Dashboard extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1288,6 +1591,11 @@ public class Dashboard extends javax.swing.JPanel {
     private LIB.JPanelRound jPanelRound1;
     private LIB.JPanelRound jPanelRound10;
     private LIB.JPanelRound jPanelRound11;
+    private LIB.JPanelRound jPanelRound12;
+    private LIB.JPanelRound jPanelRound13;
+    private LIB.JPanelRound jPanelRound14;
+    private LIB.JPanelRound jPanelRound15;
+    private LIB.JPanelRound jPanelRound16;
     private LIB.JPanelRound jPanelRound2;
     private LIB.JPanelRound jPanelRound3;
     private LIB.JPanelRound jPanelRound4;
@@ -1298,6 +1606,8 @@ public class Dashboard extends javax.swing.JPanel {
     private LIB.JPanelRound jPanelRound9;
     private keeptoo.KButton kButton5;
     private keeptoo.KButton kButton6;
+    private keeptoo.KButton kButton7;
+    private javax.swing.JPanel pnlClientes;
     private javax.swing.JPanel pnlConcesionarios;
     private javax.swing.JPanel pnlEmpleados;
     private javax.swing.JPanel pnlFeatures;

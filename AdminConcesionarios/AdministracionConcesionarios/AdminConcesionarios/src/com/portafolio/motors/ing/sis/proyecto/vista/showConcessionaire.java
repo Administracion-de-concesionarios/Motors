@@ -72,7 +72,7 @@ public class showConcessionaire extends javax.swing.JPanel {
 
             int dato = Integer.parseInt(txtSearch.getText());
             Listas<concesionarioBuilder> borrar = mensajero.eliminarConcesionarios(dato);
-            if (borrar != null && !txtSearch.equals("")) {
+            if (borrar != null && !txtSearch.getText().equals("")) {
                 for (int i = 0; i < borrar.size(); i--) {
                     borrar.remove(i).getId();
                     borrar.remove(i).getNombre();
@@ -141,7 +141,7 @@ public class showConcessionaire extends javax.swing.JPanel {
         txtSearch.setBordeColorNoFocus(new java.awt.Color(153, 153, 255));
         txtSearch.setColorTransparente(true);
         txtSearch.setMaterialDesing(true);
-        txtSearch.setPlaceholder("Filtrar por nombre");
+        txtSearch.setPlaceholder("Filtrar por id");
         txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtSearchKeyTyped(evt);

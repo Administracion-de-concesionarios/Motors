@@ -6,15 +6,15 @@ package com.portafolio.motors.ing.sis.proyecto.controlador;
  */
 public class featuresBuilder {
 
-    int id;
-    String descripcion;
-    String maxVel;
-    String maxTorque;
-    String tipoCombustible;
-    String aceleracion;
-    String kilometraje;
-    String suspension;
-    String radiador;
+    private int id;
+    private String descripcion;
+    private String maxVel;
+    private String maxTorque;
+    private String tipoCombustible;
+    private String aceleracion;
+    private String kilometraje;
+    private String suspension;
+    private String radiador;
 
     public featuresBuilder(int id, String descripcion, String maxVel, String maxTorque, String tipoCombustible, String aceleracion, String kilometraje, String suspension, String radiador) {
         this.id = id;

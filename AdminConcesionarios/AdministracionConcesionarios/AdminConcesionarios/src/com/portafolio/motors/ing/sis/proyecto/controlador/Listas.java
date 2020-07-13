@@ -37,6 +37,16 @@ public class Listas<T> implements Iterable<T> {
     public int size() {
         return tamanio;
     }
+    
+    /**
+     * Verifica si el elemento especificado existe en la lista o no.
+     *
+     * @param t elemento a verificar
+     * @return verdadero o falso si el elemento se encuentra en la arista
+     */
+    public boolean contains(T t) {
+        return indexOf(t) >= 0;
+    }
 
     /**
      * Devuelve el elemento en la posicion indicada
@@ -428,6 +438,20 @@ public class Listas<T> implements Iterable<T> {
             return elemento;
 
         }
+    }
+    
+    /**
+     * Elimina el nodo de la lista en el que se encuentre el elemento
+     * especificado.
+     *
+     * @param t elemento que se va a eliminar
+     * @return El elemento eliminado
+     */
+    public T remove(T t) {
+        if (!isEmpty() && this.contains(t)) {
+            return remove(indexOf(t));
+        }
+        return null;
     }
 
     /**
