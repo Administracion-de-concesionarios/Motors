@@ -45,6 +45,7 @@ public class newConcessionaire extends javax.swing.JPanel {
         } else {
             boolean agregar = mensajero.nuevosConcesionarios(id, nombre, direccion, telefono);
             if (agregar != false) {
+                //new alertas.AlertInformation(null, true).setVisible(true);
                 JOptionPane.showMessageDialog(null, "¡El concesionario se ha agregado al equipo!", "Motors", JOptionPane.INFORMATION_MESSAGE);
                 limpiar();
             } else {

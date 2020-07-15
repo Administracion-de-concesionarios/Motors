@@ -327,6 +327,11 @@ public class Dashboard extends javax.swing.JPanel {
         btnDesvincular1.setkHoverStartColor(new java.awt.Color(0, 193, 56));
         btnDesvincular1.setkIndicatorColor(new java.awt.Color(51, 51, 51));
         btnDesvincular1.setkStartColor(new java.awt.Color(45, 46, 70));
+        btnDesvincular1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDesvincular1ActionPerformed(evt);
+            }
+        });
         jPanelRound9.add(btnDesvincular1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 130));
 
         pnlEmpleados.add(jPanelRound9, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 130, 130));
@@ -1189,20 +1194,25 @@ public class Dashboard extends javax.swing.JPanel {
     }//GEN-LAST:event_btnModificarDatosActionPerformed
 
     private void btnNuevosConcesionarios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevosConcesionarios1ActionPerformed
-        main.irNewEmployee(this);
+        //main.irNewEmployee(this);
+        new alertas.AlertEmployee(main, true).setVisible(true);
     }//GEN-LAST:event_btnNuevosConcesionarios1ActionPerformed
 
     private void btnModificarDatos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarDatos1ActionPerformed
-        // TODO add your handling code here:
+        new alertas.AlertError(main, true).setVisible(true);
     }//GEN-LAST:event_btnModificarDatos1ActionPerformed
 
     private void btbBuscarConcesionarios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbBuscarConcesionarios1ActionPerformed
-        // TODO add your handling code here:
+        new alertas.AlertWarning(main, true).setVisible(true);
     }//GEN-LAST:event_btbBuscarConcesionarios1ActionPerformed
 
     private void btnNuevosConcesionarios2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevosConcesionarios2ActionPerformed
         main.irAddFeatures(this);
     }//GEN-LAST:event_btnNuevosConcesionarios2ActionPerformed
+
+    private void btnDesvincular1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesvincular1ActionPerformed
+        new alertas.AlertInformation(main, true).setVisible(true);
+    }//GEN-LAST:event_btnDesvincular1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

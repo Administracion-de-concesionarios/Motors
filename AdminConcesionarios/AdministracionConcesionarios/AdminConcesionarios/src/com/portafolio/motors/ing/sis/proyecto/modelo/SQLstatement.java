@@ -2,6 +2,7 @@ package com.portafolio.motors.ing.sis.proyecto.modelo;
 
 import com.portafolio.motors.ing.sis.proyecto.controlador.Listas;
 import com.portafolio.motors.ing.sis.proyecto.controlador.concesionarioBuilder;
+import com.portafolio.motors.ing.sis.proyecto.controlador.employeeBuilder;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -33,6 +34,8 @@ public class SQLstatement {
     ResultSet rs = null;
     private Listas<concesionarioBuilder> lista;
     private concesionarioBuilder concesionario;
+    private Listas<employeeBuilder> listEmployee;
+    private employeeBuilder employee;
 
     //CONSTRUCTOR
     public SQLstatement() {
@@ -284,6 +287,102 @@ public class SQLstatement {
             return false;
         }
         return true;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Listas<employeeBuilder> showData() {
+        try {
+            ps = cn.prepareStatement("select * from gc_empleado");
+            rs = ps.executeQuery();
+            if (rs != null) {
+                while (rs.next()) {
+                    employee = new employeeBuilder();
+                    employee.setId(rs.getString(1));
+                    employee.setNombre(rs.getString(2));
+                    employee.setApellidos(rs.getString(3));
+                    employee.setDireccion(rs.getString(4));
+                    employee.setTelefono(rs.getString(5));
+                    employee.setDni(rs.getString(6));
+                    employee.setSueldo(rs.getObject(7));
+                    employee.setJefe(rs.getString(8));
+                    employee.setFechaAlta(rs.getDate(9));
+                    employee.setFechaBaja(rs.getDate(10));
+                    employee.setTipoEmpleado(rs.getString(11));
+                    listEmployee.addFirst(employee);
+                }
+            }
+            return listEmployee;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (NullPointerException throwables) {
+            throwables.getCause();
+        }
+        return null;
+    }
+
+    /**
+     *
+     * @param username
+     * @return
+     */
+    public Listas<employeeBuilder> buscarPorSeleccion(Object username) {
+
+        try {
+            ps = cn.prepareStatement("selec * from gc_empleado where EMP_ID = ?");
+            ps.setObject(1, username);
+            rs = ps.executeQuery();
+            if (rs != null) {
+                while (rs.next()) {
+                    employeeBuilder datos = new employeeBuilder();
+                    datos.setId(rs.getString(1));
+                    datos.setNombre(rs.getString(2));
+                    datos.setApellidos(rs.getString(3));
+                    datos.setDireccion(rs.getString(4));
+                    datos.setTelefono(rs.getString(5));
+                    datos.setDni(rs.getString(6));
+                    datos.setSueldo(rs.getObject(7));
+                    datos.setJefe(rs.getString(8));
+                    datos.setFechaAlta(rs.getDate(9));
+                    datos.setFechaBaja(rs.getDate(10));
+                    datos.setTipoEmpleado(rs.getString(11));
+                    listEmployee.addFirst(datos);
+                }
+            }
+            return listEmployee;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "No se pudieron cargar los datos!", "Motors", JOptionPane.ERROR_MESSAGE);
+            System.err.format("SQL State: %s\n%s ", e.getSQLState(), e.getMessage());
+        }
+        return null;
+    }
+
+    public boolean modifyEmployee(String id, String nombre, String apellidos, Object direccion, String telefono, String dni, Object sueldo, String jefe, Date entrada, Date salida, String cargo) {
+        try {
+            ps = cn.prepareStatement("call SP_MODIFICAREMPLEADO (?,?,?,?,?,?,?,?,?,?,?)");
+            ps.setString(1, id);
+            ps.setString(2, nombre);
+            ps.setString(3, apellidos);
+            ps.setObject(4, direccion);
+            ps.setString(5, telefono);
+            ps.setString(6, dni);
+            ps.setObject(7, sueldo);
+            ps.setString(8, jefe);
+            ps.setDate(9, entrada);
+            ps.setDate(10, salida);
+            ps.setString(11, cargo);
+
+            int modify = ps.executeUpdate();
+            if (modify > 0) {
+                JOptionPane.showMessageDialog(null, "¡Se han modificado los datos en la base de datos!", "Motors", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "¡Ocurrió un error al mandar los datos a la BD", "Motors", JOptionPane.ERROR_MESSAGE);
+            System.out.println("LA BD DIJO: " + e.getMessage());
+        }
+        return false;
     }
 
 }
