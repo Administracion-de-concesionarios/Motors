@@ -3,6 +3,7 @@ package com.portafolio.motors.ing.sis.proyecto.vista;
 import com.portafolio.motors.ing.sis.proyecto.controlador.concesionarioBuilder;
 import java.awt.Color;
 import javax.swing.JPanel;
+import keeptoo.Drag;
 
 /**
  *
@@ -26,6 +27,27 @@ public class Dashboard extends javax.swing.JPanel {
     
     void resetColor(JPanel panel) {//[247,245,249]
         panel.setBackground(new Color(247, 245, 249));
+    }
+    
+    public void reset() {
+        // PANELES
+        pnlEmpleados.setVisible(false);
+        pnlConcesionarios.setVisible(false);
+        pnlOfertas.setVisible(false);
+        pnlHome.setVisible(false);
+        pnlFeatures.setVisible(false);
+        pnlTaller.setVisible(false);
+        pnlClientes.setVisible(false);
+        // HOVERS
+        resetColor(hoverHome);
+        resetColor(hoverEMP);
+        resetColor(hoverTaller);
+        resetColor(hoverInventario);
+        resetColor(hoverOfertas);
+        resetColor(hoverClientes);
+        resetColor(hoverPagos);
+        resetColor(hoverCaracteristicas);
+        resetColor(hoverSedes);
     }
 
     /**
@@ -104,6 +126,34 @@ public class Dashboard extends javax.swing.JPanel {
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         btnNuevosConcesionarios2 = new keeptoo.KButton();
+        pnlClientes = new javax.swing.JPanel();
+        jPanelRound12 = new LIB.JPanelRound();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        kButton7 = new keeptoo.KButton();
+        jPanelRound13 = new LIB.JPanelRound();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        btnNuevosConcesionarios3 = new keeptoo.KButton();
+        jPanelRound14 = new LIB.JPanelRound();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        btnModificarDatos2 = new keeptoo.KButton();
+        jPanelRound15 = new LIB.JPanelRound();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        btnDesvincular2 = new keeptoo.KButton();
+        jPanelRound16 = new LIB.JPanelRound();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        btbBuscarConcesionarios2 = new keeptoo.KButton();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -138,6 +188,16 @@ public class Dashboard extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1280, 605));
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                formMouseDragged(evt);
+            }
+        });
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                formMousePressed(evt);
+            }
+        });
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         contenedor.setBackground(new java.awt.Color(255, 255, 255));
@@ -658,6 +718,218 @@ public class Dashboard extends javax.swing.JPanel {
 
         contenedor.add(pnlFeatures, "card7");
 
+        pnlClientes.setBackground(new java.awt.Color(255, 255, 255));
+        pnlClientes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelRound12.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelRound12.setColorPrimario(new java.awt.Color(96, 150, 150));
+        jPanelRound12.setColorSecundario(new java.awt.Color(96, 150, 150));
+        jPanelRound12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/img/btnwl.jpeg"))); // NOI18N
+        jPanelRound12.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 190, -1));
+
+        jLabel42.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel42.setText("la beinvenida");
+        jPanelRound12.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+
+        jLabel43.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel43.setText("Te damos");
+        jPanelRound12.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        kButton7.setBorderPainted(false);
+        kButton7.setkBackGroundColor(new java.awt.Color(96, 150, 150));
+        kButton7.setkEndColor(new java.awt.Color(96, 150, 150));
+        kButton7.setkForeGround(new java.awt.Color(96, 150, 150));
+        kButton7.setkHoverColor(new java.awt.Color(96, 150, 150));
+        kButton7.setkHoverEndColor(new java.awt.Color(96, 150, 150));
+        kButton7.setkHoverForeGround(new java.awt.Color(96, 150, 150));
+        kButton7.setkHoverStartColor(new java.awt.Color(96, 150, 150));
+        kButton7.setkIndicatorColor(new java.awt.Color(96, 150, 150));
+        kButton7.setkPressedColor(new java.awt.Color(96, 150, 150));
+        kButton7.setkSelectedColor(new java.awt.Color(96, 150, 150));
+        kButton7.setkStartColor(new java.awt.Color(96, 150, 150));
+        jPanelRound12.add(kButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 80));
+
+        pnlClientes.add(jPanelRound12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 300, 80));
+
+        jPanelRound13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel44.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel44.setText("Cliente");
+        jPanelRound13.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 120, -1));
+
+        jLabel45.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel45.setText("Asociar");
+        jPanelRound13.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 100, -1));
+
+        jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/icon/userAdd.png"))); // NOI18N
+        jPanelRound13.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        btnNuevosConcesionarios3.setBackground(new java.awt.Color(255, 255, 255));
+        btnNuevosConcesionarios3.setForeground(new java.awt.Color(0, 0, 0));
+        btnNuevosConcesionarios3.setActionCommand("Asociar empleado");
+        btnNuevosConcesionarios3.setBorderPainted(false);
+        btnNuevosConcesionarios3.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        btnNuevosConcesionarios3.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        btnNuevosConcesionarios3.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        btnNuevosConcesionarios3.setIconTextGap(35);
+        btnNuevosConcesionarios3.setkBackGroundColor(new java.awt.Color(242, 167, 81));
+        btnNuevosConcesionarios3.setkEndColor(new java.awt.Color(242, 167, 81));
+        btnNuevosConcesionarios3.setkForeGround(new java.awt.Color(0, 0, 0));
+        btnNuevosConcesionarios3.setkHoverColor(new java.awt.Color(0, 193, 56));
+        btnNuevosConcesionarios3.setkHoverEndColor(new java.awt.Color(0, 193, 56));
+        btnNuevosConcesionarios3.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        btnNuevosConcesionarios3.setkHoverStartColor(new java.awt.Color(0, 193, 56));
+        btnNuevosConcesionarios3.setkIndicatorColor(new java.awt.Color(51, 51, 51));
+        btnNuevosConcesionarios3.setkStartColor(new java.awt.Color(242, 167, 81));
+        btnNuevosConcesionarios3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnNuevosConcesionarios3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btnNuevosConcesionarios3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevosConcesionarios3ActionPerformed(evt);
+            }
+        });
+        jPanelRound13.add(btnNuevosConcesionarios3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 130));
+
+        pnlClientes.add(jPanelRound13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 130, 130));
+
+        jPanelRound14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel47.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel47.setText("Modificar");
+        jPanelRound14.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 110, -1));
+
+        jLabel48.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel48.setText("Datos");
+        jPanelRound14.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 120, -1));
+
+        jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/icon/userModify.png"))); // NOI18N
+        jPanelRound14.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        btnModificarDatos2.setBackground(new java.awt.Color(255, 255, 255));
+        btnModificarDatos2.setForeground(new java.awt.Color(0, 0, 0));
+        btnModificarDatos2.setActionCommand("Asociar empleado");
+        btnModificarDatos2.setBorderPainted(false);
+        btnModificarDatos2.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        btnModificarDatos2.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        btnModificarDatos2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnModificarDatos2.setIconTextGap(8);
+        btnModificarDatos2.setkBackGroundColor(new java.awt.Color(238, 172, 157));
+        btnModificarDatos2.setkEndColor(new java.awt.Color(238, 172, 157));
+        btnModificarDatos2.setkForeGround(new java.awt.Color(0, 0, 0));
+        btnModificarDatos2.setkHoverColor(new java.awt.Color(0, 193, 56));
+        btnModificarDatos2.setkHoverEndColor(new java.awt.Color(0, 193, 56));
+        btnModificarDatos2.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        btnModificarDatos2.setkHoverStartColor(new java.awt.Color(0, 193, 56));
+        btnModificarDatos2.setkIndicatorColor(new java.awt.Color(51, 51, 51));
+        btnModificarDatos2.setkStartColor(new java.awt.Color(238, 172, 157));
+        btnModificarDatos2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarDatos2ActionPerformed(evt);
+            }
+        });
+        jPanelRound14.add(btnModificarDatos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 130));
+
+        pnlClientes.add(jPanelRound14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, 130, 130));
+
+        jPanelRound15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel50.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel50.setText("Cliente");
+        jPanelRound15.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+
+        jLabel51.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel51.setText("Desvincular");
+        jPanelRound15.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+
+        jLabel52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/icon/userDeleted.png"))); // NOI18N
+        jPanelRound15.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        btnDesvincular2.setBackground(new java.awt.Color(255, 255, 255));
+        btnDesvincular2.setForeground(new java.awt.Color(0, 0, 0));
+        btnDesvincular2.setToolTipText("");
+        btnDesvincular2.setActionCommand("Asociar empleado");
+        btnDesvincular2.setBorderPainted(false);
+        btnDesvincular2.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        btnDesvincular2.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        btnDesvincular2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnDesvincular2.setIconTextGap(7);
+        btnDesvincular2.setkBackGroundColor(new java.awt.Color(45, 46, 70));
+        btnDesvincular2.setkEndColor(new java.awt.Color(45, 46, 70));
+        btnDesvincular2.setkForeGround(new java.awt.Color(0, 0, 0));
+        btnDesvincular2.setkHoverColor(new java.awt.Color(0, 193, 56));
+        btnDesvincular2.setkHoverEndColor(new java.awt.Color(0, 193, 56));
+        btnDesvincular2.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        btnDesvincular2.setkHoverStartColor(new java.awt.Color(0, 193, 56));
+        btnDesvincular2.setkIndicatorColor(new java.awt.Color(51, 51, 51));
+        btnDesvincular2.setkStartColor(new java.awt.Color(45, 46, 70));
+        btnDesvincular2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDesvincular2ActionPerformed(evt);
+            }
+        });
+        jPanelRound15.add(btnDesvincular2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 130));
+
+        pnlClientes.add(jPanelRound15, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 130, 130));
+
+        jPanelRound16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel53.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel53.setText("Datos");
+        jPanelRound16.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+
+        jLabel54.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel54.setText("Buscar");
+        jPanelRound16.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+
+        jLabel55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/icon/searching.png"))); // NOI18N
+        jPanelRound16.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        btbBuscarConcesionarios2.setBackground(new java.awt.Color(255, 255, 255));
+        btbBuscarConcesionarios2.setForeground(new java.awt.Color(0, 0, 0));
+        btbBuscarConcesionarios2.setActionCommand("Asociar empleado");
+        btbBuscarConcesionarios2.setBorderPainted(false);
+        btbBuscarConcesionarios2.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        btbBuscarConcesionarios2.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        btbBuscarConcesionarios2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btbBuscarConcesionarios2.setIconTextGap(8);
+        btbBuscarConcesionarios2.setkBackGroundColor(new java.awt.Color(242, 167, 81));
+        btbBuscarConcesionarios2.setkEndColor(new java.awt.Color(242, 167, 81));
+        btbBuscarConcesionarios2.setkForeGround(new java.awt.Color(0, 0, 0));
+        btbBuscarConcesionarios2.setkHoverColor(new java.awt.Color(0, 193, 56));
+        btbBuscarConcesionarios2.setkHoverEndColor(new java.awt.Color(0, 193, 56));
+        btbBuscarConcesionarios2.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        btbBuscarConcesionarios2.setkHoverStartColor(new java.awt.Color(0, 193, 56));
+        btbBuscarConcesionarios2.setkIndicatorColor(new java.awt.Color(51, 51, 51));
+        btbBuscarConcesionarios2.setkStartColor(new java.awt.Color(242, 167, 81));
+        btbBuscarConcesionarios2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btbBuscarConcesionarios2ActionPerformed(evt);
+            }
+        });
+        jPanelRound16.add(btbBuscarConcesionarios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 130));
+
+        pnlClientes.add(jPanelRound16, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 30, 130, 130));
+
+        jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/icon/prb2.png"))); // NOI18N
+        pnlClientes.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 0, 70, 60));
+
+        jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/icon/prb1.png"))); // NOI18N
+        pnlClientes.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 540, 70, 70));
+
+        contenedor.add(pnlClientes, "card8");
+
         add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 1170, 610));
 
         jPanel1.setBackground(new java.awt.Color(247, 245, 249));
@@ -1021,20 +1293,18 @@ public class Dashboard extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void btnEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmpleadosMouseClicked
+        reset();
+        setColor(hoverEMP);
         pnlEmpleados.setVisible(true);
-        pnlConcesionarios.setVisible(false);
-        pnlOfertas.setVisible(false);
-        pnlHome.setVisible(false);
-        pnlFeatures.setVisible(false);
+        
 
     }//GEN-LAST:event_btnEmpleadosMouseClicked
 
     private void btnConcesionariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConcesionariosMouseClicked
-        pnlEmpleados.setVisible(false);
+        reset();
+        setColor(hoverSedes);
         pnlConcesionarios.setVisible(true);
-        pnlOfertas.setVisible(false);
-        pnlHome.setVisible(false);
-        pnlFeatures.setVisible(false);
+        
 
     }//GEN-LAST:event_btnConcesionariosMouseClicked
 
@@ -1047,151 +1317,63 @@ public class Dashboard extends javax.swing.JPanel {
     }//GEN-LAST:event_btbBuscarConcesionariosActionPerformed
 
     private void btnHomesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomesMouseClicked
+        reset();
         setColor(hoverHome);
-        resetColor(hoverEMP);
-        resetColor(hoverTaller);
-        resetColor(hoverInventario);
-        resetColor(hoverOfertas);
-        resetColor(hoverClientes);
-        resetColor(hoverPagos);
-        resetColor(hoverCaracteristicas);
-        resetColor(hoverSedes);
+
     }//GEN-LAST:event_btnHomesMouseClicked
 
     private void btnEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmpleadoMouseClicked
-        resetColor(hoverHome);
+        reset();
         setColor(hoverEMP);
-        resetColor(hoverTaller);
-        resetColor(hoverInventario);
-        resetColor(hoverOfertas);
-        resetColor(hoverClientes);
-        resetColor(hoverPagos);
-        resetColor(hoverCaracteristicas);
-        resetColor(hoverSedes);
         //Show panel
         pnlEmpleados.setVisible(true);
-        pnlHome.setVisible(false);
-        pnlFeatures.setVisible(false);
-        pnlConcesionarios.setVisible(false);
-        pnlOfertas.setVisible(false);
     }//GEN-LAST:event_btnEmpleadoMouseClicked
 
     private void btnTallerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTallerMouseClicked
-        resetColor(hoverHome);
-        resetColor(hoverEMP);
+        reset();
         setColor(hoverTaller);
-        resetColor(hoverInventario);
-        resetColor(hoverOfertas);
-        resetColor(hoverClientes);
-        resetColor(hoverPagos);
-        resetColor(hoverCaracteristicas);
-        resetColor(hoverSedes);
         //show panel
-        pnlEmpleados.setVisible(false);
         pnlTaller.setVisible(true);
-        pnlHome.setVisible(false);
-        pnlFeatures.setVisible(false);
-        pnlConcesionarios.setVisible(false);
-        pnlOfertas.setVisible(false);
-
     }//GEN-LAST:event_btnTallerMouseClicked
 
     private void btnInventariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventariosMouseClicked
-        resetColor(hoverHome);
-        resetColor(hoverEMP);
-        resetColor(hoverTaller);
+        reset();
         setColor(hoverInventario);
-        resetColor(hoverOfertas);
-        resetColor(hoverClientes);
-        resetColor(hoverPagos);
-        resetColor(hoverCaracteristicas);
-        resetColor(hoverSedes);
         //show panel
 
 
     }//GEN-LAST:event_btnInventariosMouseClicked
 
     private void btnOffersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOffersMouseClicked
-        resetColor(hoverHome);
-        resetColor(hoverEMP);
-        resetColor(hoverTaller);
-        resetColor(hoverInventario);
+        reset();
         setColor(hoverOfertas);
-        resetColor(hoverClientes);
-        resetColor(hoverPagos);
-        resetColor(hoverCaracteristicas);
-        resetColor(hoverSedes);
         //show panel
-        pnlEmpleados.setVisible(false);
         pnlOfertas.setVisible(true);
-        pnlHome.setVisible(false);
-        pnlFeatures.setVisible(false);
-        pnlTaller.setVisible(false);
-        pnlConcesionarios.setVisible(false);
     }//GEN-LAST:event_btnOffersMouseClicked
 
     private void btnClientsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientsMouseClicked
-        resetColor(hoverHome);
-        resetColor(hoverEMP);
-        resetColor(hoverTaller);
-        resetColor(hoverInventario);
-        resetColor(hoverOfertas);
+        reset();
         setColor(hoverClientes);
-        resetColor(hoverPagos);
-        resetColor(hoverCaracteristicas);
-        resetColor(hoverSedes);
+        pnlClientes.setVisible(true);
     }//GEN-LAST:event_btnClientsMouseClicked
 
     private void btnFpayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFpayMouseClicked
-        resetColor(hoverHome);
-        resetColor(hoverEMP);
-        resetColor(hoverTaller);
-        resetColor(hoverInventario);
-        resetColor(hoverOfertas);
-        resetColor(hoverClientes);
+        reset();
         setColor(hoverPagos);
-        resetColor(hoverCaracteristicas);
-        resetColor(hoverSedes);
+
     }//GEN-LAST:event_btnFpayMouseClicked
 
     private void btnCaractMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCaractMouseClicked
-        resetColor(hoverHome);
-        resetColor(hoverEMP);
-        resetColor(hoverTaller);
-        resetColor(hoverInventario);
-        resetColor(hoverOfertas);
-        resetColor(hoverClientes);
-        resetColor(hoverPagos);
+        reset();
         setColor(hoverCaracteristicas);
-        resetColor(hoverSedes);
-        
         pnlFeatures.setVisible(true);
-        pnlHome.setVisible(false);
-        pnlEmpleados.setVisible(false);
-        pnlOfertas.setVisible(false);
-        pnlTaller.setVisible(false);
-        pnlConcesionarios.setVisible(false);
-
     }//GEN-LAST:event_btnCaractMouseClicked
 
     private void btnSedeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSedeMouseClicked
-        resetColor(hoverHome);
-        resetColor(hoverEMP);
-        resetColor(hoverTaller);
-        resetColor(hoverInventario);
-        resetColor(hoverOfertas);
-        resetColor(hoverClientes);
-        resetColor(hoverPagos);
-        resetColor(hoverCaracteristicas);
+        reset();
         setColor(hoverSedes);
         //show panel
         pnlConcesionarios.setVisible(true);
-        pnlHome.setVisible(false);
-        pnlFeatures.setVisible(false);
-        pnlEmpleados.setVisible(false);
-        pnlOfertas.setVisible(false);
-        pnlTaller.setVisible(false);
-
     }//GEN-LAST:event_btnSedeMouseClicked
 
     private void btnModificarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarDatosActionPerformed
@@ -1204,7 +1386,7 @@ public class Dashboard extends javax.swing.JPanel {
     }//GEN-LAST:event_btnNuevosConcesionarios1ActionPerformed
 
     private void btnModificarDatos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarDatos1ActionPerformed
-       main.irModifyConcessionaire(this, cb);
+        main.irModifyConcessionaire(this, cb);
     }//GEN-LAST:event_btnModificarDatos1ActionPerformed
 
     private void btbBuscarConcesionarios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbBuscarConcesionarios1ActionPerformed
@@ -1212,21 +1394,48 @@ public class Dashboard extends javax.swing.JPanel {
     }//GEN-LAST:event_btbBuscarConcesionarios1ActionPerformed
 
     private void btnNuevosConcesionarios2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevosConcesionarios2ActionPerformed
-        main.irAddFeatures(this);
+        //main.irAddFeatures(this);
     }//GEN-LAST:event_btnNuevosConcesionarios2ActionPerformed
 
     private void btnDesvincular1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesvincular1ActionPerformed
-        new alertas.AlertInformation(main, true).setVisible(true);
+        //new alertas.AlertInformation(main, true).setVisible(true);
     }//GEN-LAST:event_btnDesvincular1ActionPerformed
 
     private void btnDesvincularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesvincularActionPerformed
         main.irShowConcessionaire(this, cb);
     }//GEN-LAST:event_btnDesvincularActionPerformed
 
+    private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
+        new keeptoo.Drag(jPanel1).moveWindow(evt);
+        new keeptoo.Drag(contenedor).moveWindow(evt);
+    }//GEN-LAST:event_formMouseDragged
+
+    private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
+        new keeptoo.Drag(jPanel1).onPress(evt);
+        new keeptoo.Drag(contenedor).onPress(evt);
+    }//GEN-LAST:event_formMousePressed
+
+    private void btnNuevosConcesionarios3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevosConcesionarios3ActionPerformed
+        main.irNewClient(this);
+    }//GEN-LAST:event_btnNuevosConcesionarios3ActionPerformed
+
+    private void btnModificarDatos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarDatos2ActionPerformed
+
+    }//GEN-LAST:event_btnModificarDatos2ActionPerformed
+
+    private void btnDesvincular2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesvincular2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDesvincular2ActionPerformed
+
+    private void btbBuscarConcesionarios2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbBuscarConcesionarios2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btbBuscarConcesionarios2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private keeptoo.KButton btbBuscarConcesionarios;
     private keeptoo.KButton btbBuscarConcesionarios1;
+    private keeptoo.KButton btbBuscarConcesionarios2;
     private javax.swing.JLabel btnAutos;
     private javax.swing.JLabel btnCaract;
     private javax.swing.JLabel btnClientes;
@@ -1234,6 +1443,7 @@ public class Dashboard extends javax.swing.JPanel {
     private javax.swing.JLabel btnConcesionarios;
     private keeptoo.KButton btnDesvincular;
     private keeptoo.KButton btnDesvincular1;
+    private keeptoo.KButton btnDesvincular2;
     private javax.swing.JLabel btnEmpleado;
     private javax.swing.JLabel btnEmpleados;
     private javax.swing.JLabel btnFpay;
@@ -1245,9 +1455,11 @@ public class Dashboard extends javax.swing.JPanel {
     private javax.swing.JLabel btnMediosPay;
     private keeptoo.KButton btnModificarDatos;
     private keeptoo.KButton btnModificarDatos1;
+    private keeptoo.KButton btnModificarDatos2;
     private keeptoo.KButton btnNuevosConcesionarios;
     private keeptoo.KButton btnNuevosConcesionarios1;
     private keeptoo.KButton btnNuevosConcesionarios2;
+    private keeptoo.KButton btnNuevosConcesionarios3;
     private javax.swing.JLabel btnOfertas;
     private javax.swing.JLabel btnOffers;
     private javax.swing.JLabel btnSede;
@@ -1298,7 +1510,24 @@ public class Dashboard extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1307,6 +1536,11 @@ public class Dashboard extends javax.swing.JPanel {
     private LIB.JPanelRound jPanelRound1;
     private LIB.JPanelRound jPanelRound10;
     private LIB.JPanelRound jPanelRound11;
+    private LIB.JPanelRound jPanelRound12;
+    private LIB.JPanelRound jPanelRound13;
+    private LIB.JPanelRound jPanelRound14;
+    private LIB.JPanelRound jPanelRound15;
+    private LIB.JPanelRound jPanelRound16;
     private LIB.JPanelRound jPanelRound2;
     private LIB.JPanelRound jPanelRound3;
     private LIB.JPanelRound jPanelRound4;
@@ -1317,6 +1551,8 @@ public class Dashboard extends javax.swing.JPanel {
     private LIB.JPanelRound jPanelRound9;
     private keeptoo.KButton kButton5;
     private keeptoo.KButton kButton6;
+    private keeptoo.KButton kButton7;
+    private javax.swing.JPanel pnlClientes;
     private javax.swing.JPanel pnlConcesionarios;
     private javax.swing.JPanel pnlEmpleados;
     private javax.swing.JPanel pnlFeatures;

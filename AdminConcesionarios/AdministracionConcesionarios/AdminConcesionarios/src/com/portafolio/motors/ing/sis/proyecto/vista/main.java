@@ -14,8 +14,9 @@ public class main extends javax.swing.JFrame {
     private showConcessionaire sc;
     private concesionarioBuilder cb;
     private modifyConcessionaire mc;
-    private addFeatures af;
+    //private addFeatures af;
     private newEmployee ne;
+    private newClient ac;
     //private estadistica es;
 
     public main() {
@@ -75,20 +76,28 @@ public class main extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
 
-    public void irAddFeatures(JPanel jpanel) {
-        remove(jpanel);
-        af = new addFeatures(this);
-        af.setVisible(true);
-        add(af);
-        pack();
-        setLocationRelativeTo(null);
-    }
+//    public void irAddFeatures(JPanel jpanel) {
+//        remove(jpanel);
+//        af = new addFeatures(this);
+//        af.setVisible(true);
+//        add(af);
+//        pack();
+//        setLocationRelativeTo(null);
+//    }
 
     public void irNewEmployee(JPanel jpanel) {
         remove(jpanel);
         ne = new newEmployee(this);
         ne.setVisible(true);
         add(ne);
+        pack();
+        setLocationRelativeTo(null);
+    }
+    public void irNewClient(JPanel jpanel) {
+        remove(jpanel);
+        ac = new newClient(this);
+        ac.setVisible(true);
+        add(ac);
         pack();
         setLocationRelativeTo(null);
     }

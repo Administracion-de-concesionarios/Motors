@@ -1,6 +1,7 @@
 package com.portafolio.motors.ing.sis.proyecto.modelo;
 
 import com.portafolio.motors.ing.sis.proyecto.controlador.Listas;
+import com.portafolio.motors.ing.sis.proyecto.controlador.clientBuilder;
 import com.portafolio.motors.ing.sis.proyecto.controlador.concesionarioBuilder;
 import com.portafolio.motors.ing.sis.proyecto.controlador.employeeBuilder;
 import java.sql.Connection;
@@ -36,6 +37,8 @@ public class SQLstatement {
     private concesionarioBuilder concesionario;
     private Listas<employeeBuilder> listEmployee;
     private employeeBuilder employee;
+    private Listas<clientBuilder> clientList;
+    private clientBuilder client;
 
     //CONSTRUCTOR
     public SQLstatement() {
@@ -383,6 +386,187 @@ public class SQLstatement {
             System.out.println("LA BD DIJO: " + e.getMessage());
         }
         return false;
+    }
+
+    //CRUD client
+    /**
+     * INSERTAR NUEVO CLIENTE A LA BASE DE DATOS
+     *
+     * @param id
+     * @param nombre
+     * @param apellidos
+     * @param telefono
+     * @param email
+     * @param fNac
+     * @param profesion
+     * @return
+     */
+    public boolean addClient(int id, String nombre, String apellidos, int telefono, String email, Date fNac, String profesion) {
+        try {
+            ps = cn.prepareStatement("call SP_AGREGARCLIENTE(?,?,?,?,?,?,?)");
+
+            ps.setInt(1, id);
+            ps.setString(2, nombre);
+            ps.setString(3, apellidos);
+            ps.setInt(4, telefono);
+            ps.setString(5, email);
+            ps.setDate(6, fNac);
+            ps.setString(7, profesion);
+
+            rs = ps.executeQuery();
+            if (rs != null) {
+                System.out.println("DATOS: ID " + id);
+                System.out.println("DATOS: NOMBRE " + nombre + " " + apellidos);
+                System.out.println("DATOS: TELEFONO " + telefono);
+                System.out.println("DATOS: EMAIL " + email);
+                System.out.println("DATOS: FECHA NAC " + fNac.toString());
+                System.out.println("DATOS: PROFESION " + profesion);
+                JOptionPane.showMessageDialog(null, "¡Se ha registrado un nuevo cliente!", "Motors", JOptionPane.INFORMATION_MESSAGE);
+                return true;
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "¡Error al insertar los datos en la BD!", "Motors", 0);
+            Logger.getLogger(SQLstatement.class.getName()).log(Level.SEVERE, null, e);
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            System.out.println("Error " + e);
+        }
+        return false;
+    }
+
+    /**
+     * EN ESTE METODO SE CONSULTAN LOS DATOS DE TODOS LOS CLIENTES
+     *
+     * @return
+     */
+    public Listas<clientBuilder> buscarClientes() {
+        try {
+            ps = cn.prepareStatement("SELECT * FROM gc_cliente");
+            rs = ps.executeQuery();
+            if (rs != null) {
+                while (rs.next()) {
+                    client = new clientBuilder();
+                    client.setId(rs.getInt(1));
+                    client.setNombre(rs.getString(2));
+                    client.setApellidos(rs.getString(3));
+                    client.setTelefono(rs.getInt(4));
+                    client.setEmail(rs.getString(5));
+                    client.setfNac(rs.getDate(6));
+                    client.setProfesion(rs.getString(7));
+                    clientList.addFirst(client);
+                }
+            }
+            return clientList;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (NullPointerException throwables) {
+            throwables.getCause();
+        }
+        return null;
+    }
+
+    /**
+     * SE BUSCAN LOS DATOS DE LOS CLIENTES POR ID
+     *
+     * @param id
+     * @return
+     */
+    public Listas<clientBuilder> findClient(int id) {
+        try {
+            ps = cn.prepareStatement("SELECT * FROM gc_cliente WHERE CON_ID = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            if (rs != null) {
+                while (rs.next()) {
+                    clientBuilder cliente = new clientBuilder();
+                    cliente.setId(rs.getInt(1));
+                    cliente.setNombre(rs.getString(2));
+                    cliente.setApellidos(rs.getString(3));
+                    cliente.setTelefono(rs.getInt(4));
+                    cliente.setEmail(rs.getString(5));
+                    cliente.setfNac(rs.getDate(6));
+                    cliente.setProfesion(rs.getString(7));
+                    clientList.addFirst(cliente);
+                }
+            }
+            return clientList;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "No se pudieron cargar los datos!");
+            System.err.format("SQL State: %s\n%s ", e.getSQLState(), e.getMessage());
+        }
+        return null;
+    }
+
+    /**
+     * SE ENVIAN LOS DATOS DE LOS CLIENTES A LA BD PARA MODIFICARLOS
+     *
+     * @param id
+     * @param nombre
+     * @param apellidos
+     * @param email
+     * @param telefono
+     * @param fNac
+     * @param profesion
+     * @return
+     */
+    public boolean modifyClient(int id, String nombre, String apellidos, int telefono, String email, Date fNac, String profesion) {
+        try {
+
+            ps = cn.prepareCall("CALL SP_MODIFICARCLIENTE (?,?,?,?,?,?,?)");
+            ps.setInt(1, id);
+            ps.setString(2, nombre);
+            ps.setString(3, apellidos);
+            ps.setInt(4, telefono);
+            ps.setString(5, email);
+            ps.setDate(6, fNac);
+            ps.setString(7, profesion);
+
+            int modificar = ps.executeUpdate();
+            if (modificar > 0) {
+                JOptionPane.showMessageDialog(null, "Los datos se han modificado con exito en la BD");
+                return true;
+            } else {
+                JOptionPane.showMessageDialog(null, "Lo sentimos, los datos no se han podido modificar!", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error inesperado, estamos trabajando en ello!", "Error de la BD", JOptionPane.ERROR_MESSAGE);
+            Logger.getLogger(SQLstatement.class.getName()).log(Level.SEVERE, null, e.getMessage());
+        }
+        return false;
+    }
+
+    /**
+     * SE ELIMINA EL CLIENTE CON EL ID ESPECIFICADO.
+     *
+     * @param id
+     * @return
+     */
+    public Listas<clientBuilder> deleteClient(int id) {
+        try {
+
+            ps = cn.prepareCall("CALL SP_ELIMINARCLIENTE(?)");
+            ps.setInt(1, id);
+            ps.executeUpdate();
+            if (rs != null) {
+                while (rs.next()) {
+                    client = new clientBuilder();
+                    client.setId(rs.getInt(1));
+                    client.setNombre(rs.getString(2));
+                    client.setApellidos(rs.getString(3));
+                    client.setTelefono(rs.getInt(4));
+                    client.setEmail(rs.getString(5));
+                    client.setfNac(rs.getDate(6));
+                    client.setProfesion(rs.getString(7));
+                    clientList.addFirst(client);
+                }
+            }
+            JOptionPane.showMessageDialog(null, "El cliente se ha eliminado con exito!!", "Eliminando...!", JOptionPane.INFORMATION_MESSAGE);
+            return clientList;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Upss, no se ha podido esta vez!", "Error desde la BD", JOptionPane.ERROR_MESSAGE);
+            System.err.format("SQL DIJO: ", e.getSQLState(), e.getMessage());
+        }
+        return null;
     }
 
 }

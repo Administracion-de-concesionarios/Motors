@@ -12,18 +12,18 @@ import javax.swing.JOptionPane;
  * @author Yonier Asprilla
  */
 public class modifyConcessionaire extends javax.swing.JPanel {
-
+    
     private main main;
     private concesionarioBuilder cb;
     SQLstatement mensajero;
-
+    
     public modifyConcessionaire(main main, concesionarioBuilder cb) {
         this.mensajero = new SQLstatement();
         this.main = main;
         this.cb = cb;
         initComponents();
     }
-
+    
     private void showData() {
         //MANDO DATOS PARA LA BUSQUEDA
         int dato = Integer.parseInt(txtSearch.getText());
@@ -43,12 +43,12 @@ public class modifyConcessionaire extends javax.swing.JPanel {
                     txtDireccion.setText(datos.get(i).getDireccion());
                     txtTelefono.setText(String.valueOf(datos.get(i).getTelefono()));
                 }
-
+                
             } catch (Exception e) {
             }
         }
     }
-
+    
     private void modificarDatos() {
         try {
             /**
@@ -62,42 +62,43 @@ public class modifyConcessionaire extends javax.swing.JPanel {
             String nombre = txtNombre.getText();
             String direccion = txtDireccion.getText();
             int telefono = Integer.parseInt(txtTelefono.getText());
-
+            
             int confirm = JOptionPane.showConfirmDialog(null, "¿Estas seguro de modificar tus datos?", "Motors", JOptionPane.INFORMATION_MESSAGE);
             if (confirm == 0) {
                 boolean modificar = mensajero.modificarConcesionarios(id, nombre, direccion, telefono);
-                System.out.println("LA VISTA TIENE ID "+ id);
-                System.out.println("LA VISTA TIENE NOMBRE "+ nombre);
-                System.out.println("LA VISTA TIENE DIRECCION "+ direccion);
-                System.out.println("LA VISTA TIENE TELEFONO "+ telefono);
+                System.out.println("LA VISTA TIENE ID " + id);
+                System.out.println("LA VISTA TIENE NOMBRE " + nombre);
+                System.out.println("LA VISTA TIENE DIRECCION " + direccion);
+                System.out.println("LA VISTA TIENE TELEFONO " + telefono);
                 if (modificar != false) {
-                    JOptionPane.showMessageDialog(null, "¡Datos modificados con exito!", "Motors", JOptionPane.INFORMATION_MESSAGE);
+                    new alertas.AlertInformation(main, true).setVisible(true);
+                    //JOptionPane.showMessageDialog(null, "¡Datos modificados con exito!", "Motors", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
-
+            
         } catch (NumberFormatException e) {
             System.out.println("LA VISTA DIJO: " + e.getMessage());
         }
-
+        
     }
-
+    
     private void roadTripStepOne() {
-
+        
         if (!txtId.equals("") || txtNombre.equals("") || txtDireccion.equals("") || txtTelefono.equals("")) {
             step1.setBackground(new Color(0, 19, 56));
             line.setForeground(new Color(0, 19, 56));
             line.setBackground(new Color(0, 19, 56));
         }
-
+        
     }
-
+    
     private void roadTripStepTwo() {
         if (!txtId.equals("") || txtNombre.equals("") || txtDireccion.equals("") || txtTelefono.equals("")) {
             step2.setBackground(new Color(0, 19, 56));
 //        line.setForeground(new Color(0, 19, 56));
 //        line.setBackground(new Color(0, 19, 56));
         }
-
+        
     }
 
     /**
@@ -171,7 +172,7 @@ public class modifyConcessionaire extends javax.swing.JPanel {
         txtSearch.setBordeColorNoFocus(new java.awt.Color(51, 51, 51));
         txtSearch.setColorTransparente(true);
         txtSearch.setMaterialDesing(true);
-        txtSearch.setPlaceholder("Buscar Por Nombre");
+        txtSearch.setPlaceholder("Buscar Por ID");
         txtSearch.setSelectionColor(new java.awt.Color(0, 0, 0));
 
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/portafolio/motors/ing/sis/proyecto/icon/search.png"))); // NOI18N
